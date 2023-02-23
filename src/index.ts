@@ -26,7 +26,6 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
     name: 'nuxt:pure-annotations',
     transform: {
       order: 'post',
-      // @ts-expect-error remove when magic-string & rollup types align again
       handler(code, id) {
         if (!filter(id) || !FUNCTION_RE_SINGLE.test(code)) {
           return
