@@ -54,7 +54,7 @@
     "@typescript-eslint/eslint-plugin": "5.53.0",
     "@typescript-eslint/parser": "5.53.0",
     "@vitest/coverage-c8": "0.28.5",
-    "bumpp": "8.2.1",
+    "bumpp": "9.0.0",
     "eslint": "8.34.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.2.1",
