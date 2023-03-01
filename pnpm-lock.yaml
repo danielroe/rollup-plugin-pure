@@ -19,7 +19,7 @@ importers:
       expect-type: 0.15.0
       husky: 8.0.3
       lint-staged: 13.1.2
-      magic-regexp: 0.6.2
+      magic-regexp: 0.6.3
       magic-string: ^0.30.0
       pathe: 1.1.0
       pinst: 3.0.0
@@ -46,7 +46,7 @@ importers:
       expect-type: 0.15.0
       husky: 8.0.3
       lint-staged: 13.1.2
-      magic-regexp: 0.6.2
+      magic-regexp: 0.6.3
       pathe: 1.1.0
       pinst: 3.0.0
       prettier: 2.8.4
@@ -2281,13 +2281,13 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /magic-regexp/0.6.2:
-    resolution: {integrity: sha512-TU7mogmbA7W9YjGybLmCBJU6C2IGgLgRfr76ILmgWlM/fNGrYOxrZC9AeKzii/DCyFddgBB3t9B6BLzUHrxwxg==}
+  /magic-regexp/0.6.3:
+    resolution: {integrity: sha512-RQJGOUham95/bqe9KaaQDxSP5txZoySk1omZCY7ZiG6/mqRY1t0w8Mmv9TV3XE0VkAD84pjUXs8jFFNLIzf5ow==}
     dependencies:
       estree-walker: 3.0.3
-      magic-string: 0.27.0
-      mlly: 1.1.0
-      ufo: 1.0.1
+      magic-string: 0.30.0
+      mlly: 1.1.1
+      ufo: 1.1.0
       unplugin: 1.0.1
     dev: true
 
@@ -2310,7 +2310,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
-    dev: false
 
   /make-dir/3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
@@ -2379,15 +2378,6 @@ packages:
       mri: 1.2.0
       pathe: 1.1.0
       typescript: 4.9.5
-    dev: true
-
-  /mlly/1.1.0:
-    resolution: {integrity: sha512-cwzBrBfwGC1gYJyfcy8TcZU1f+dbH/T+TuOhtYP2wLv/Fb51/uV7HJQfBPtEupZ2ORLRU1EKFS/QfS3eo9+kBQ==}
-    dependencies:
-      acorn: 8.8.2
-      pathe: 1.1.0
-      pkg-types: 1.0.2
-      ufo: 1.0.1
     dev: true
 
   /mlly/1.1.1:
@@ -2977,10 +2967,6 @@ packages:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
-
-  /ufo/1.0.1:
-    resolution: {integrity: sha512-boAm74ubXHY7KJQZLlXrtMz52qFvpsbOxDcZOnw/Wf+LS4Mmyu7JxmzD4tDLtUQtmZECypJ0FrCz4QIe6dvKRA==}
     dev: true
 
   /ufo/1.1.0:
