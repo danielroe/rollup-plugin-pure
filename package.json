@@ -38,12 +38,11 @@
     "lint:prettier": "prettier --write --loglevel warn",
     "prepack": "pnpm build",
     "prepare": "husky install",
-    "prepublishOnly": "pnpm lint && pnpm test && pinst --disable",
+    "prepublishOnly": "pnpm lint && pnpm test",
     "release": "bumpp && npm publish",
     "test": "vitest run",
     "test:types": "tsc --noEmit",
-    "postinstall": "husky install",
-    "postpublish": "pinst --enable"
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
@@ -64,7 +63,6 @@
     "lint-staged": "13.2.2",
     "magic-regexp": "0.6.3",
     "pathe": "1.1.0",
-    "pinst": "3.0.0",
     "prettier": "2.8.8",
     "rollup": "3.21.2",
     "typescript": "5.0.4",
