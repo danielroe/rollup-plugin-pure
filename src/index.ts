@@ -41,9 +41,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
         if (s.hasChanged()) {
           return {
             code: s.toString(),
-            map: options.sourcemap
-              ? s.generateMap({ hires: true })
-              : undefined,
+            map: options.sourcemap ? s.generateMap({ hires: true }) : undefined,
           }
         }
       },
