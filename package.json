@@ -64,7 +64,7 @@
     "magic-regexp": "0.6.3",
     "pathe": "1.1.0",
     "prettier": "2.8.8",
-    "rollup": "3.21.2",
+    "rollup": "3.21.5",
     "typescript": "5.0.4",
     "unbuild": "1.2.1",
     "vite": "4.3.4",
