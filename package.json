@@ -76,5 +76,5 @@
   "resolutions": {
     "rollup-plugin-pure": "link:."
   },
-  "packageManager": "pnpm@8.5.0"
+  "packageManager": "pnpm@8.5.1"
 }
