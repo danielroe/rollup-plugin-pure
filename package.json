@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-pure",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Annotate functions as pure for Rollup",
   "repository": "danielroe/rollup-plugin-pure",
