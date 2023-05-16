@@ -37,12 +37,10 @@
     "lint:eslint": "eslint --fix",
     "lint:prettier": "prettier --write --loglevel warn",
     "prepack": "pnpm build",
-    "prepare": "husky install",
     "prepublishOnly": "pnpm lint && pnpm test",
     "release": "bumpp && npm publish",
     "test": "vitest run",
-    "test:types": "tsc --noEmit",
-    "postinstall": "husky install"
+    "test:types": "tsc --noEmit"
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
@@ -59,12 +57,12 @@
     "eslint-plugin-prettier": "4.2.1",
     "execa": "7.1.1",
     "expect-type": "0.15.0",
-    "husky": "8.0.3",
     "lint-staged": "13.2.2",
     "magic-regexp": "0.7.0",
     "pathe": "1.1.0",
     "prettier": "2.8.8",
     "rollup": "3.21.7",
+    "simple-git-hooks": "^2.8.1",
     "typescript": "5.0.4",
     "unbuild": "1.2.1",
     "vite": "4.3.5",
@@ -75,6 +73,9 @@
   },
   "resolutions": {
     "rollup-plugin-pure": "link:."
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   },
   "packageManager": "pnpm@8.5.1"
 }
