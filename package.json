@@ -50,7 +50,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.59.8",
     "@typescript-eslint/parser": "5.59.8",
-    "@vitest/coverage-c8": "0.31.1",
+    "@vitest/coverage-c8": "0.31.4",
     "bumpp": "9.1.0",
     "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
@@ -66,7 +66,7 @@
     "typescript": "5.0.4",
     "unbuild": "1.2.1",
     "vite": "4.3.9",
-    "vitest": "0.31.1"
+    "vitest": "0.31.4"
   },
   "peerDependencies": {
     "rollup": "^3.0.0"
