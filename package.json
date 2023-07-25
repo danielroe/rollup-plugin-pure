@@ -62,7 +62,7 @@
     "pathe": "1.1.1",
     "prettier": "3.0.0",
     "rollup": "3.26.3",
-    "simple-git-hooks": "2.8.1",
+    "simple-git-hooks": "2.9.0",
     "typescript": "5.1.6",
     "unbuild": "1.2.1",
     "vite": "4.4.6",
