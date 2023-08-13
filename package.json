@@ -57,7 +57,7 @@
     "eslint-plugin-prettier": "5.0.0",
     "execa": "7.2.0",
     "expect-type": "0.16.0",
-    "lint-staged": "13.2.3",
+    "lint-staged": "13.3.0",
     "magic-regexp": "0.7.0",
     "pathe": "1.1.1",
     "prettier": "3.0.1",
