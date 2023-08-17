@@ -48,8 +48,8 @@
     "strip-literal": "^1.0.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.3.0",
-    "@typescript-eslint/parser": "6.3.0",
+    "@typescript-eslint/eslint-plugin": "6.4.0",
+    "@typescript-eslint/parser": "6.4.0",
     "@vitest/coverage-c8": "0.31.4",
     "bumpp": "9.1.1",
     "eslint": "8.47.0",
@@ -60,7 +60,7 @@
     "lint-staged": "14.0.0",
     "magic-regexp": "0.7.0",
     "pathe": "1.1.1",
-    "prettier": "3.0.1",
+    "prettier": "3.0.2",
     "rollup": "3.28.0",
     "simple-git-hooks": "2.9.0",
     "typescript": "5.1.6",
