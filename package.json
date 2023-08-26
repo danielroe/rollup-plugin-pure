@@ -48,11 +48,11 @@
     "strip-literal": "^1.0.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.4.0",
-    "@typescript-eslint/parser": "6.4.0",
+    "@typescript-eslint/eslint-plugin": "6.4.1",
+    "@typescript-eslint/parser": "6.4.1",
     "@vitest/coverage-c8": "0.31.4",
     "bumpp": "9.1.1",
-    "eslint": "8.47.0",
+    "eslint": "8.48.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-prettier": "5.0.0",
     "execa": "8.0.1",
