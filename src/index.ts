@@ -13,11 +13,15 @@ export interface PureAnnotationsOptions {
 
 export function PluginPure(options: PureAnnotationsOptions): Plugin {
   const FUNCTION_RE = new RegExp(
-    `(?<!\\/\\* #__PURE__ \\*\\/ )\\b(${options.functions.join('|')})\\s*\\(`,
+    `(?<!\\/\\* #__PURE__ \\*\\/ )(?:[^a-zA-Z0-9_$]|^)(${options.functions
+      .join('|')
+      .replace('$', '\\$')})\\s*\\(`,
     'g'
   )
   const FUNCTION_RE_SINGLE = new RegExp(
-    `(?<!\\/\\* #__PURE__ \\*\\/ )\\b(${options.functions.join('|')})\\s*\\(`
+    `(?<!\\/\\* #__PURE__ \\*\\/ )(?:[^a-zA-Z0-9_$]|^)(${options.functions
+      .join('|')
+      .replace('$', '\\$')})\\s*\\(`
   )
 
   const filter = createFilter(options.include, options.exclude)
