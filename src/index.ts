@@ -15,13 +15,13 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
   const FUNCTION_RE = new RegExp(
     `(?<!\\/\\* #__PURE__ \\*\\/ )(?:[^a-zA-Z0-9_$]|^)(${options.functions
       .join('|')
-      .replace('$', '\\$')})\\s*\\(`,
+      .replaceAll('$', '\\$')})\\s*\\(`,
     'g'
   )
   const FUNCTION_RE_SINGLE = new RegExp(
     `(?<!\\/\\* #__PURE__ \\*\\/ )(?:[^a-zA-Z0-9_$]|^)(${options.functions
       .join('|')
-      .replace('$', '\\$')})\\s*\\(`
+      .replaceAll('$', '\\$')})\\s*\\(`
   )
 
   const filter = createFilter(options.include, options.exclude)
