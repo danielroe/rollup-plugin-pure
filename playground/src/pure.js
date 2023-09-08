@@ -16,10 +16,7 @@ export const config = $createConfig({
   someConfig: true
 })
 
-// ensures it isn’t over-eager
+// ensures regex isn’t over-eager
 defineComponent($createConfig())
-
-// ensures it excludes preceding characters
-console.log('other_defineComponent()')
 
 export const foo = 'hello'
