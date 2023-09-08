@@ -16,4 +16,7 @@ export const config = $createConfig({
   someConfig: true
 })
 
+// ensures regex isn’t over-eager
+defineComponent($createConfig())
+
 export const foo = 'hello'
