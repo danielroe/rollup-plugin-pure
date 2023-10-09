@@ -61,7 +61,7 @@
     "magic-regexp": "0.7.0",
     "pathe": "1.1.1",
     "prettier": "3.0.3",
-    "rollup": "3.29.2",
+    "rollup": "3.29.4",
     "simple-git-hooks": "2.9.0",
     "typescript": "5.2.2",
     "unbuild": "2.0.0",
