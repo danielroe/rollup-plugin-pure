@@ -26,26 +26,35 @@ export const unpluginPure = createUnplugin((options: PureAnnotationsOptions) => 
 
   const filter = createFilter(options.include, options.exclude)
 
+  function transform(code: string, id: string) {
+    if (!filter(id) || !FUNCTION_RE_SINGLE.test(code)) {
+      return
+    }
+
+    const s = new MagicString(code)
+    const strippedCode = stripLiteral(code)
+
+    for (const match of strippedCode.matchAll(FUNCTION_RE)) {
+      s.overwrite(match.index!, match.index! + match[0].length, '/* #__PURE__ */ ' + match[0])
+    }
+
+    if (s.hasChanged()) {
+      return {
+        code: s.toString(),
+        map: options.sourcemap ? s.generateMap({ hires: true }) : undefined,
+      }
+    }
+  }
+
   return {
     name: 'unplugin-pure',
-    transform(code, id) {
-      if (!filter(id) || !FUNCTION_RE_SINGLE.test(code)) {
-        return
-      }
-
-      const s = new MagicString(code)
-      const strippedCode = stripLiteral(code)
-
-      for (const match of strippedCode.matchAll(FUNCTION_RE)) {
-        s.overwrite(match.index!, match.index! + match[0].length, '/* #__PURE__ */ ' + match[0])
-      }
-
-      if (s.hasChanged()) {
-        return {
-          code: s.toString(),
-          map: options.sourcemap ? s.generateMap({ hires: true }) : undefined,
-        }
-      }
+    transform,
+    rollup: {
+      name: 'rollup-plugin-pure',
+      transform: {
+        order: 'post',
+        handler: transform,
+      },
     },
   }
 })
