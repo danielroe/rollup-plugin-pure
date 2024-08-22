@@ -61,7 +61,7 @@
     "magic-regexp": "0.8.0",
     "pathe": "1.1.2",
     "prettier": "3.3.3",
-    "rollup": "3.29.4",
+    "rollup": "4.21.0",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.5.4",
     "unbuild": "2.0.0",
@@ -69,7 +69,7 @@
     "vitest": "2.0.5"
   },
   "peerDependencies": {
-    "rollup": "^3.0.0"
+    "rollup": "^3.0.0 || ^4.0.0"
   },
   "resolutions": {
     "rollup-plugin-pure": "link:."
