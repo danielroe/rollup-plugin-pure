@@ -73,8 +73,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.6.2)
       vite:
-        specifier: 5.4.7
-        version: 5.4.7(@types/node@20.14.2)
+        specifier: 5.4.8
+        version: 5.4.8(@types/node@20.14.2)
       vitest:
         specifier: 2.0.5
         version: 2.0.5(@types/node@20.14.2)
@@ -2570,37 +2570,6 @@ packages:
     resolution: {integrity: sha512-LdsW4pxj0Ot69FAoXZ1yTnA9bjGohr2yNBU7QKRxpz8ITSkhuDl6h3zS/tvgz4qrNjeRnvrWeXQ8ZF7Um4W00Q==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
-
-  vite@5.4.7:
-    resolution: {integrity: sha512-5l2zxqMEPVENgvzTuBpHer2awaetimj2BGkhBPdnwKbPNOlHsODU+oiazEZzLK7KhAnOrO+XGYJYn4ZlUhDtDQ==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || >=20.0.0
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      sass-embedded: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
 
   vite@5.4.8:
     resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
@@ -5137,15 +5106,6 @@ snapshots:
       - sugarss
       - supports-color
       - terser
-
-  vite@5.4.7(@types/node@20.14.2):
-    dependencies:
-      esbuild: 0.21.5
-      postcss: 8.4.45
-      rollup: 4.22.5
-    optionalDependencies:
-      '@types/node': 20.14.2
-      fsevents: 2.3.3
 
   vite@5.4.8(@types/node@20.14.2):
     dependencies:
