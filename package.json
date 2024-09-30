@@ -51,17 +51,17 @@
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.21.0",
     "@vitest/coverage-v8": "2.0.5",
-    "bumpp": "9.5.2",
+    "bumpp": "9.6.1",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.2.1",
-    "execa": "9.3.1",
+    "execa": "9.4.0",
     "expect-type": "0.20.0",
     "lint-staged": "15.2.10",
     "magic-regexp": "0.8.0",
     "pathe": "1.1.2",
     "prettier": "3.3.3",
-    "rollup": "4.21.3",
+    "rollup": "4.22.5",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.6.2",
     "unbuild": "2.0.0",
@@ -77,5 +77,5 @@
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
   },
-  "packageManager": "pnpm@9.10.0"
+  "packageManager": "pnpm@9.11.0"
 }
