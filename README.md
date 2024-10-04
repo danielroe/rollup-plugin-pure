@@ -65,7 +65,7 @@ Published under the [MIT License](./LICENCE).
 [npm-version-src]: https://img.shields.io/npm/v/rollup-plugin-pure?style=flat-square
 [npm-version-href]: https://npmjs.com/package/rollup-plugin-pure
 [npm-downloads-src]: https://img.shields.io/npm/dm/rollup-plugin-pure?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/rollup-plugin-pure
+[npm-downloads-href]: https://npm.chart.dev/rollup-plugin-pure
 [github-actions-src]: https://img.shields.io/github/actions/workflow/status/danielroe/rollup-plugin-pure/ci.yml?branch=main
 [github-actions-href]: https://github.com/danielroe/rollup-plugin-pure/actions?query=workflow%3Aci
 [codecov-src]: https://img.shields.io/codecov/c/gh/danielroe/rollup-plugin-pure/main?style=flat-square
