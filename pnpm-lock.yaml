@@ -46,8 +46,8 @@ importers:
         specifier: 9.4.0
         version: 9.4.0
       expect-type:
-        specifier: 0.20.0
-        version: 0.20.0
+        specifier: 1.0.0
+        version: 1.0.0
       lint-staged:
         specifier: 15.2.10
         version: 15.2.10
@@ -1450,8 +1450,8 @@ packages:
     resolution: {integrity: sha512-yKHlle2YGxZE842MERVIplWwNH5VYmqqcPFgtnlU//K8gxuFFXu0pwd/CrfXTumFpeEiufsP7+opT/bPJa1yVw==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
-  expect-type@0.20.0:
-    resolution: {integrity: sha512-uHaC9LYNv6BcW+8SvXcwUUDCrrUxt3GSa61DFvTHj8JC+M0hekMFBwMlCarLQDk5bbpZ2vStpnQPIwRuV98YMw==}
+  expect-type@1.0.0:
+    resolution: {integrity: sha512-WcdwgWmGAE48kSHjxPVLriBuvJdJdi1VKTh7HmHvcm6WPdIT1Z04wUVX8BLiqnq0Rz5SnfJ+P0kM1RBqSLLoPQ==}
     engines: {node: '>=12.0.0'}
 
   fast-deep-equal@3.1.3:
@@ -3983,7 +3983,7 @@ snapshots:
       strip-final-newline: 4.0.0
       yoctocolors: 2.1.1
 
-  expect-type@0.20.0: {}
+  expect-type@1.0.0: {}
 
   fast-deep-equal@3.1.3: {}
 
