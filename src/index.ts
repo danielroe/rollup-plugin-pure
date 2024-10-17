@@ -1,7 +1,7 @@
-import MagicString from 'magic-string'
-import type { Plugin } from 'rollup'
 import type { FilterPattern } from '@rollup/pluginutils'
+import type { Plugin } from 'rollup'
 import { createFilter } from '@rollup/pluginutils'
+import MagicString from 'magic-string'
 import { stripLiteral } from 'strip-literal'
 
 export interface PureAnnotationsOptions {
@@ -16,12 +16,12 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
     `(?<!\\/\\* #__PURE__ \\*\\/ )(?<![a-zA-Z0-9_$])(${options.functions
       .join('|')
       .replaceAll('$', '\\$')})\\s*\\(`,
-    'g'
+    'g',
   )
   const FUNCTION_RE_SINGLE = new RegExp(
     `(?<!\\/\\* #__PURE__ \\*\\/ )(?<![a-zA-Z0-9_$])(${options.functions
       .join('|')
-      .replaceAll('$', '\\$')})\\s*\\(`
+      .replaceAll('$', '\\$')})\\s*\\(`,
   )
 
   const filter = createFilter(options.include, options.exclude)
@@ -39,7 +39,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
         const strippedCode = stripLiteral(code)
 
         for (const match of strippedCode.matchAll(FUNCTION_RE)) {
-          s.overwrite(match.index!, match.index! + match[0].length, '/* #__PURE__ */ ' + match[0])
+          s.overwrite(match.index!, match.index! + match[0].length, `/* #__PURE__ */ ${match[0]}`)
         }
 
         if (s.hasChanged()) {

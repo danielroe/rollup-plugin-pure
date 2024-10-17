@@ -1,19 +1,19 @@
-function defineComponent (options) {
+function defineComponent(options) {
   console.log('this should not be in final bundle')
   return options
 }
 
-function $createConfig (options) {
+function $createConfig(options) {
   console.log('this should not be in final bundle')
   return options
 }
 
 export const comp = defineComponent({
-  someComponent: true
+  someComponent: true,
 })
 
 export const config = $createConfig({
-  someConfig: true
+  someConfig: true,
 })
 
 // ensures regex isn’t over-eager

@@ -1,19 +1,20 @@
 {
   "name": "rollup-plugin-pure",
+  "type": "module",
   "version": "0.2.1",
-  "license": "MIT",
+  "packageManager": "pnpm@9.12.1",
   "description": "Annotate functions as pure for Rollup",
+  "author": {
+    "name": "Daniel Roe <daniel@roe.dev>",
+    "url": "https://github.com/danielroe"
+  },
+  "license": "MIT",
   "repository": "danielroe/rollup-plugin-pure",
   "keywords": [
     "vite",
     "rollup",
     "pure-annotation"
   ],
-  "author": {
-    "name": "Daniel Roe <daniel@roe.dev>",
-    "url": "https://github.com/danielroe"
-  },
-  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -31,16 +32,15 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "unbuild --stub",
-    "lint": "pnpm lint:all:eslint && pnpm lint:all:prettier",
-    "lint:all:eslint": "pnpm lint:eslint --ext .ts,.js,.mjs,.cjs .",
-    "lint:all:prettier": "pnpm lint:prettier \"{src,test}/**/*.{js,json,ts}\"",
-    "lint:eslint": "eslint --fix",
-    "lint:prettier": "prettier --write --log-level warn",
+    "lint": "pnpm eslint .",
     "prepack": "pnpm build",
     "prepublishOnly": "pnpm lint && pnpm test",
     "release": "bumpp && npm publish",
     "test": "vitest run",
     "test:types": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "rollup": "^3.0.0 || ^4.0.0"
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.4",
@@ -48,19 +48,17 @@
     "strip-literal": "^2.0.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
     "@typescript-eslint/eslint-plugin": "8.10.0",
     "@typescript-eslint/parser": "8.10.0",
     "@vitest/coverage-v8": "2.1.2",
     "bumpp": "9.7.1",
     "eslint": "9.12.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-prettier": "5.2.1",
     "execa": "9.4.0",
     "expect-type": "1.1.0",
     "lint-staged": "15.2.10",
     "magic-regexp": "0.8.0",
     "pathe": "1.1.2",
-    "prettier": "3.3.3",
     "rollup": "4.24.0",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.6.3",
@@ -68,14 +66,15 @@
     "vite": "5.4.8",
     "vitest": "2.1.2"
   },
-  "peerDependencies": {
-    "rollup": "^3.0.0 || ^4.0.0"
-  },
   "resolutions": {
     "rollup-plugin-pure": "link:."
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
   },
-  "packageManager": "pnpm@9.12.1"
+  "lint-staged": {
+    "*": [
+      "pnpm eslint --fix"
+    ]
+  }
 }

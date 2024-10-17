@@ -31,8 +31,8 @@ pnpm add -D rollup-plugin-pure
 ```
 
 ```js
-import { defineConfig } from 'vite'
 import { PluginPure } from 'rollup-plugin-pure'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [

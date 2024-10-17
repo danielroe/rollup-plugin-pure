@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "rollup-plugin-pure-playground",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "vite dev",
     "build": "vite build"

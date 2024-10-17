@@ -1,9 +1,9 @@
 import { readdir, readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 
-import { expect, it, describe } from 'vitest'
 import { execaCommand } from 'execa'
 import { join } from 'pathe'
+import { describe, expect, it } from 'vitest'
 
 describe('pure annotation', () => {
   it('e2e', async () => {
@@ -21,8 +21,9 @@ describe('pure annotation', () => {
 async function $(literals: TemplateStringsArray, ...values: any[]) {
   const cmd = literals.reduce(
     (result, current, i) => result + current + (values?.[i] != null ? `${values[i]}` : ''),
-    ''
+    '',
   )
+  // eslint-disable-next-line no-console
   console.log(`${process.cwd()} $> ${cmd}`)
   const proc = execaCommand(cmd, {
     stdio: 'pipe',
