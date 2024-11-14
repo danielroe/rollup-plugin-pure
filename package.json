@@ -48,7 +48,7 @@
     "strip-literal": "^2.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "3.8.0",
+    "@antfu/eslint-config": "3.9.1",
     "@typescript-eslint/eslint-plugin": "8.14.0",
     "@typescript-eslint/parser": "8.14.0",
     "@vitest/coverage-v8": "2.1.5",
