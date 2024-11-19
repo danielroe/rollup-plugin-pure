@@ -48,7 +48,7 @@
     "strip-literal": "^2.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "3.9.1",
+    "@antfu/eslint-config": "3.9.2",
     "@typescript-eslint/eslint-plugin": "8.14.0",
     "@typescript-eslint/parser": "8.14.0",
     "@vitest/coverage-v8": "2.1.5",
@@ -59,7 +59,7 @@
     "lint-staged": "15.2.10",
     "magic-regexp": "0.8.0",
     "pathe": "1.1.2",
-    "rollup": "4.27.2",
+    "rollup": "4.27.3",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.6.3",
     "unbuild": "2.0.0",
