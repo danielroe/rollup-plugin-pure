@@ -54,7 +54,7 @@
     "@typescript-eslint/parser": "8.16.0",
     "@vitest/coverage-v8": "2.1.6",
     "bumpp": "9.8.1",
-    "eslint": "9.15.0",
+    "eslint": "9.16.0",
     "execa": "9.5.1",
     "expect-type": "1.1.0",
     "lint-staged": "15.2.10",
