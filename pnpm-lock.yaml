@@ -70,8 +70,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(typescript@5.7.2)
       vite:
-        specifier: 6.0.1
-        version: 6.0.1(@types/node@22.10.1)(jiti@2.4.1)(yaml@2.6.1)
+        specifier: 6.0.2
+        version: 6.0.2(@types/node@22.10.1)(jiti@2.4.1)(yaml@2.6.1)
       vitest:
         specifier: 2.1.7
         version: 2.1.7(@types/node@22.10.1)
@@ -3072,46 +3072,6 @@ packages:
       sugarss:
         optional: true
       terser:
-        optional: true
-
-  vite@6.0.1:
-    resolution: {integrity: sha512-Ldn6gorLGr4mCdFnmeAOLweJxZ34HjKnDm4HGo6P66IEqTxQb36VEdFJQENKxWjupNfoIjvRUnswjn1hpYEpjQ==}
-    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || ^20.0.0 || >=22.0.0
-      jiti: '>=1.21.0'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      sass-embedded: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.16.0
-      tsx: ^4.8.1
-      yaml: ^2.4.2
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      jiti:
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-      tsx:
-        optional: true
-      yaml:
         optional: true
 
   vite@6.0.2:
@@ -6403,17 +6363,6 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.10.1
       fsevents: 2.3.3
-
-  vite@6.0.1(@types/node@22.10.1)(jiti@2.4.1)(yaml@2.6.1):
-    dependencies:
-      esbuild: 0.24.0
-      postcss: 8.4.49
-      rollup: 4.28.0
-    optionalDependencies:
-      '@types/node': 22.10.1
-      fsevents: 2.3.3
-      jiti: 2.4.1
-      yaml: 2.6.1
 
   vite@6.0.2(@types/node@22.10.1)(jiti@2.4.1)(yaml@2.6.1):
     dependencies:
