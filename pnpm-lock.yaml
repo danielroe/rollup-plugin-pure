@@ -55,8 +55,8 @@ importers:
         specifier: 0.8.0
         version: 0.8.0
       pathe:
-        specifier: 1.1.2
-        version: 1.1.2
+        specifier: 2.0.0
+        version: 2.0.0
       rollup:
         specifier: 4.29.1
         version: 4.29.1
@@ -83,7 +83,7 @@ importers:
         version: link:..
       vite:
         specifier: latest
-        version: 6.0.6(@types/node@22.10.3)(jiti@2.4.2)(yaml@2.6.1)
+        version: 6.0.7(@types/node@22.10.3)(jiti@2.4.2)(yaml@2.6.1)
 
 packages:
 
@@ -2267,6 +2267,9 @@ packages:
   pathe@1.1.2:
     resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
 
+  pathe@2.0.0:
+    resolution: {integrity: sha512-G7n4uhtk9qJt2hlD+UFfsIGY854wpF+zs2bUbQ3CQEUTcn7v25LRsrmurOxTo4bJgjE4qkyshd9ldsEuY9M6xg==}
+
   pathval@2.0.0:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
     engines: {node: '>= 14.16'}
@@ -2897,6 +2900,46 @@ packages:
 
   vite@6.0.6:
     resolution: {integrity: sha512-NSjmUuckPmDU18bHz7QZ+bTYhRR0iA72cs2QAxCqDpafJ0S6qetco0LB3WW2OxlMHS0JmAv+yZ/R3uPmMyGTjQ==}
+    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': ^18.0.0 || ^20.0.0 || >=22.0.0
+      jiti: '>=1.21.0'
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      sass-embedded: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.16.0
+      tsx: ^4.8.1
+      yaml: ^2.4.2
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      jiti:
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      sass-embedded:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+      tsx:
+        optional: true
+      yaml:
+        optional: true
+
+  vite@6.0.7:
+    resolution: {integrity: sha512-RDt8r/7qx9940f8FcOIAH9PTViRrghKaK2K1jY3RaAURrEUbm9Du1mJ72G+jlhtG3WwodnfzY8ORQZbBavZEAQ==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -5423,6 +5466,8 @@ snapshots:
 
   pathe@1.1.2: {}
 
+  pathe@2.0.0: {}
+
   pathval@2.0.0: {}
 
   perfect-debounce@1.0.0: {}
@@ -6053,6 +6098,17 @@ snapshots:
       fsevents: 2.3.3
 
   vite@6.0.6(@types/node@22.10.3)(jiti@2.4.2)(yaml@2.6.1):
+    dependencies:
+      esbuild: 0.24.2
+      postcss: 8.4.49
+      rollup: 4.29.1
+    optionalDependencies:
+      '@types/node': 22.10.3
+      fsevents: 2.3.3
+      jiti: 2.4.2
+      yaml: 2.6.1
+
+  vite@6.0.7(@types/node@22.10.3)(jiti@2.4.2)(yaml@2.6.1):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.4.49

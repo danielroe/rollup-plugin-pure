@@ -59,7 +59,7 @@
     "expect-type": "1.1.0",
     "lint-staged": "15.3.0",
     "magic-regexp": "0.8.0",
-    "pathe": "1.1.2",
+    "pathe": "2.0.0",
     "rollup": "4.29.1",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.7.2",
