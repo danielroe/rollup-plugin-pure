@@ -2,7 +2,7 @@
   "name": "rollup-plugin-pure",
   "type": "module",
   "version": "0.2.1",
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@9.15.3",
   "description": "Annotate functions as pure for Rollup",
   "author": {
     "name": "Daniel Roe <daniel@roe.dev>",
@@ -60,7 +60,7 @@
     "lint-staged": "15.3.0",
     "magic-regexp": "0.8.0",
     "pathe": "2.0.0",
-    "rollup": "4.29.2",
+    "rollup": "4.30.0",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.7.2",
     "unbuild": "3.2.0",
