@@ -48,7 +48,7 @@
     "strip-literal": "^3.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "3.14.0",
+    "@antfu/eslint-config": "4.1.0",
     "@types/node": "22.10.7",
     "@typescript-eslint/eslint-plugin": "8.21.0",
     "@typescript-eslint/parser": "8.21.0",
