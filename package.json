@@ -29,9 +29,7 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "unbuild --stub",
+    "dev:prepare": "simple-git-hooks && unbuild --stub",
     "lint": "pnpm eslint .",
     "prepack": "pnpm build",
     "prepublishOnly": "pnpm lint && pnpm test",
@@ -50,13 +48,10 @@
   "devDependencies": {
     "@antfu/eslint-config": "4.1.1",
     "@types/node": "22.13.1",
-    "@typescript-eslint/eslint-plugin": "8.23.0",
-    "@typescript-eslint/parser": "8.23.0",
     "@vitest/coverage-v8": "3.0.5",
     "bumpp": "10.0.1",
     "eslint": "9.19.0",
     "execa": "9.5.2",
-    "expect-type": "1.1.0",
     "lint-staged": "15.4.3",
     "magic-regexp": "0.8.0",
     "pathe": "2.0.2",
@@ -71,11 +66,11 @@
     "rollup-plugin-pure": "link:."
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
     "*": [
-      "pnpm eslint --fix"
+      "npx eslint --fix"
     ]
   }
 }
