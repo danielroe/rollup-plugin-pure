@@ -1,8 +1,8 @@
-import type { FilterPattern } from '@rollup/pluginutils'
 import type { Plugin } from 'rollup'
-import { createFilter } from '@rollup/pluginutils'
+import type { FilterPattern } from 'unplugin-utils'
 import MagicString from 'magic-string'
 import { stripLiteral } from 'strip-literal'
+import { createFilter } from 'unplugin-utils'
 
 export interface PureAnnotationsOptions {
   sourcemap?: boolean
