@@ -1,10 +1,10 @@
 function defineComponent(options) {
-  console.log('this should be in final bundle')
+  console.log('THIS_SHOULD_REMAIN_IMPURE')
   return options
 }
 
 function $createConfig(options) {
-  console.log('this should be in final bundle')
+  console.log('THIS_SHOULD_REMAIN_CONFIG')
   return options
 }
 

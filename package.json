@@ -40,13 +40,14 @@
     "rollup": "^3.0.0 || ^4.0.0"
   },
   "dependencies": {
-    "magic-string": "^0.30.3",
-    "strip-literal": "^3.0.0",
-    "unplugin-utils": "^0.2.3"
+    "estree-walker": "^3.0.3",
+    "magic-string": "^0.30.17",
+    "unplugin-utils": "^0.2.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "4.4.0",
-    "@types/node": "22.13.8",
+    "@types/estree": "^1.0.6",
+    "@types/node": "22.13.9",
     "@vitest/coverage-v8": "3.0.7",
     "bumpp": "10.0.3",
     "eslint": "9.21.0",
