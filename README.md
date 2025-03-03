@@ -18,9 +18,9 @@
 
 Definition functions (for example, in Vue with `defineComponent`) are increasingly common but do not play nice with tree-shaking. It's not possible to tell whether or not a function call which receives an object can be tree-shaken from a build, as it's possible there might be side effects.
 
-Rollup supports `/* #__PURE__ */` annotations to declare this from a library author's point of view, but it can be tricky when we know that _every_ occurrence of a function call is pure.
+Rollup supports `/* @__PURE__ */` annotations to declare this from a library author's point of view, but it can be tricky when we know that _every_ occurrence of a function call is pure.
 
-This plugin will automatically inject the annotation before any occurrence of the function call.
+This plugin will automatically inject the annotation before any occurrence of the function call, as well as injecting `/* @__NO_SIDE_EFFECTS__ */` annotations in front of function declarations.
 
 ## Installation
 
