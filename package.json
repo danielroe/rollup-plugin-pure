@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-pure",
   "type": "module",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "packageManager": "pnpm@10.5.2",
   "description": "Annotate functions as pure for Rollup",
   "author": {
