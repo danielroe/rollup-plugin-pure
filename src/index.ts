@@ -27,7 +27,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
   const filter = createFilter(options.include, options.exclude)
 
   return {
-    name: 'nuxt:pure-annotations',
+    name: 'rollup-plugin-pure',
     transform: {
       order: 'post',
       handler(code, id) {
