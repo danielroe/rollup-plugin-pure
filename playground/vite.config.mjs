@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     PluginPure({
-      functions: ['defineComponent', '$createConfig', 'hashStyleFunction'],
+      functions: [/^define(Component|Page)$/, '$createConfig', 'hashStyleFunction'],
       include: [/(?<!im)pure\.js$/],
     }),
   ],

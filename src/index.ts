@@ -7,14 +7,13 @@ import { createFilter } from 'unplugin-utils'
 
 export interface PureAnnotationsOptions {
   sourcemap?: boolean
-  functions: string[]
+  functions: (string | RegExp)[]
   include?: FilterPattern
   exclude?: FilterPattern
 }
 
 const withLocations = <T>(node: T) => node as T & { start: number, end: number }
 export function PluginPure(options: PureAnnotationsOptions): Plugin {
-  const functionSet = new Set(options.functions)
   const filter = createFilter(options.include, options.exclude)
 
   return {
@@ -26,8 +25,8 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
           return
         }
 
-        // quick check if any of the functions are in the code
-        if (!options.functions.some(func => code.includes(func))) {
+        // quick check for early return
+        if (options.functions.every(func => typeof func === 'string' && !code.includes(func))) {
           return
         }
 
@@ -49,7 +48,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
             if (
               node.type === 'FunctionDeclaration'
               && node.id
-              && functionSet.has(node.id.name)
+              && isMatched(node.id.name, options.functions)
             ) {
               for (const _comment of ast.comments || []) {
                 const comment = withLocations(_comment)
@@ -64,7 +63,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
             if (
               node.type === 'CallExpression'
               && node.callee.type === 'Identifier'
-              && functionSet.has(node.callee.name)
+              && isMatched(node.callee.name, options.functions)
             ) {
               for (const _comment of ast.comments || /* v8-ignore */ []) {
                 const comment = withLocations(_comment)
@@ -86,4 +85,10 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
       },
     },
   }
+}
+
+function isMatched(name: string, patterns: (string | RegExp)[]) {
+  return patterns.some(pattern =>
+    typeof pattern === 'string' ? name === pattern : pattern.test(name),
+  )
 }

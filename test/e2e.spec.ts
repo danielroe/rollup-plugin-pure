@@ -16,11 +16,13 @@ describe('pure annotation', () => {
     const code = await readFile(join(assetsDir, filename), 'utf-8')
 
     // Verify that string literals from impure.js should be present in the bundle
-    expect(code).toContain('THIS_SHOULD_REMAIN_IMPURE')
+    expect(code).toContain('THIS_SHOULD_REMAIN_COMPONENT')
+    expect(code).toContain('THIS_SHOULD_REMAIN_PAGE')
     expect(code).toContain('THIS_SHOULD_REMAIN_CONFIG')
 
     // Verify that string literals from pure.js should not be present in the bundle
-    expect(code).not.toContain('THIS_SHOULD_BE_REMOVED_PURE')
+    expect(code).not.toContain('THIS_SHOULD_BE_REMOVED_COMPONENT')
+    expect(code).not.toContain('THIS_SHOULD_BE_REMOVED_PAGE')
     expect(code).not.toContain('THIS_SHOULD_BE_REMOVED_CONFIG')
     expect(code).not.toContain('THIS_SHOULD_BE_REMOVED_HASH_STYLE')
 
