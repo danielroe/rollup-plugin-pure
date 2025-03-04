@@ -57,12 +57,6 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
               && node.id
               && functionSet.has(node.id.name)
             ) {
-              for (const _comment of ast.comments || []) {
-                const comment = withLocations(_comment)
-                if (comment.end <= node.start && comment.value.includes('__NO_SIDE_EFFECTS__')) {
-                  return
-                }
-              }
               const annotation = '/*@__NO_SIDE_EFFECTS__*/ '
               s.prependRight(node.start, annotation)
               annotations.push({ start: node.start, annotation })
@@ -75,12 +69,6 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
               && node.callee.type === 'Identifier'
               && functionSet.has(node.callee.name)
             ) {
-              for (const _comment of ast.comments || /* v8-ignore */ []) {
-                const comment = withLocations(_comment)
-                if (comment.end <= node.start && comment.value.includes('__PURE__')) {
-                  return
-                }
-              }
               const annotation = '/*@__PURE__*/ '
               s.prependRight(node.start, annotation)
               annotations.push({ start: node.start, annotation })
@@ -124,8 +112,4 @@ function fixAst(ast: Program, annotations: Annotation[]) {
       }
     },
   })
-
-  // TODO: If the `ast.comments` should be updated,
-  // push the annotations to it here.
-  // If not, remove the `ast.comments` check above.
 }
