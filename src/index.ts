@@ -45,7 +45,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
         }
 
         const s = new MagicString(code)
-        const annotations: Annotation[] = []
+        const annotations: string[] = []
 
         walk(ast, {
           enter(_node) {
@@ -59,8 +59,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
             ) {
               const annotation = '/*@__NO_SIDE_EFFECTS__*/ '
               s.prependRight(node.start, annotation)
-              annotations.push({ start: node.start, annotation })
-              return
+              annotations.push(annotation)
             }
 
             // Handle function calls - add @__PURE__ annotation
@@ -71,14 +70,22 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
             ) {
               const annotation = '/*@__PURE__*/ '
               s.prependRight(node.start, annotation)
-              annotations.push({ start: node.start, annotation })
+              annotations.push(annotation)
+            }
+
+            if (annotations.length) {
+              node.start += sumOffset(annotations)
+            }
+          },
+          leave(_node) {
+            const node = withLocations(_node)
+            if (annotations.length) {
+              node.end += sumOffset(annotations)
             }
           },
         })
 
         if (annotations.length) {
-          fixAst(ast, annotations)
-
           return {
             code: s.toString(),
             ast: withLocations(ast),
@@ -90,26 +97,6 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
   }
 }
 
-function fixAst(ast: Program, annotations: Annotation[]) {
-  walk(ast, {
-    enter(_node) {
-      let startOffset = 0
-      let endOffset = 0
-      const node = withLocations(_node)
-
-      for (const annotation of annotations) {
-        if (annotation.start <= node.start) {
-          startOffset += annotation.annotation.length
-        }
-        if (annotation.start <= node.end) {
-          endOffset += annotation.annotation.length
-        }
-      }
-
-      if (startOffset > 0 || endOffset > 0) {
-        node.start += startOffset
-        node.end += endOffset
-      }
-    },
-  })
+function sumOffset(annotations: string[]) {
+  return annotations.reduce((acc, annotation) => acc + annotation.length, 0)
 }
