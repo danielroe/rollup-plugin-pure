@@ -37,7 +37,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [
     PluginPure({
-      functions: ['defineComponent'],
+      functions: ['defineComponent', /^define(Page|Meta)$/],
       include: [/(?<!im)pure\.js$/],
       // exclude: [],
       // sourcemap: true,

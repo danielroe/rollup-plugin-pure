@@ -1,5 +1,10 @@
 function defineComponent(options) {
-  console.log('THIS_SHOULD_REMAIN_IMPURE')
+  console.log('THIS_SHOULD_REMAIN_COMPONENT')
+  return options
+}
+
+function definePage(options) {
+  console.log('THIS_SHOULD_REMAIN_PAGE')
   return options
 }
 
@@ -10,6 +15,10 @@ function $createConfig(options) {
 
 export const comp = defineComponent({
   someComponent: true,
+})
+
+export const page = definePage({
+  name: 'Example',
 })
 
 export const config = $createConfig({

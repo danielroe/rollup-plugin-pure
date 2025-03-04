@@ -1,5 +1,10 @@
 function defineComponent(options) {
-  console.log('THIS_SHOULD_BE_REMOVED_PURE')
+  console.log('THIS_SHOULD_BE_REMOVED_COMPONENT')
+  return options
+}
+
+function definePage(options) {
+  console.log('THIS_SHOULD_BE_REMOVED_PAGE')
   return options
 }
 
@@ -20,6 +25,11 @@ export const comp = defineComponent({
   someComponent: true,
 })
 
+// Normal exports should be annotated
+export const page = definePage({
+  name: 'Example',
+})
+
 export const config = $createConfig({
   someConfig: true,
 })
@@ -29,8 +39,11 @@ hashStyleFunction({
 })
 
 // Already annotated call - should not be double annotated
-export const alreadyAnnotated = /* @__PURE__ */ defineComponent({
+export const compAnnotated = /* @__PURE__ */ defineComponent({
   someComponent: true,
+})
+export const pageAnnotated = /* @__PURE__ */ definePage({
+  name: 'Example',
 })
 export const hashStyleAnnotated = /* #__PURE__ */ $createConfig({
   someConfig: true,
@@ -38,5 +51,6 @@ export const hashStyleAnnotated = /* #__PURE__ */ $createConfig({
 
 // ensures regex isn't over-eager
 defineComponent($createConfig())
+definePage($createConfig())
 
 export const foo = 'hello'
