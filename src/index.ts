@@ -12,11 +12,6 @@ export interface PureAnnotationsOptions {
   exclude?: FilterPattern
 }
 
-interface Annotation {
-  start: number
-  annotation: string
-}
-
 const withLocations = <T>(node: T) => node as T & { start: number, end: number }
 export function PluginPure(options: PureAnnotationsOptions): Plugin {
   const functionSet = new Set(options.functions)
@@ -78,8 +73,8 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
             }
           },
           leave(_node) {
-            const node = withLocations(_node)
             if (annotations.length) {
+              const node = withLocations(_node)
               node.end += sumOffset(annotations)
             }
           },
