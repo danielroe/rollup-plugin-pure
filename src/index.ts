@@ -40,7 +40,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
         }
 
         const s = new MagicString(code)
-        const annotations: string[] = []
+        let offset = 0
 
         walk(ast, {
           enter(_node) {
@@ -54,7 +54,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
             ) {
               const annotation = '/*@__NO_SIDE_EFFECTS__*/ '
               s.prependRight(node.start, annotation)
-              annotations.push(annotation)
+              offset += annotation.length
             }
 
             // Handle function calls - add @__PURE__ annotation
@@ -65,22 +65,22 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
             ) {
               const annotation = '/*@__PURE__*/ '
               s.prependRight(node.start, annotation)
-              annotations.push(annotation)
+              offset += annotation.length
             }
 
-            if (annotations.length) {
-              node.start += sumOffset(annotations)
+            if (offset) {
+              node.start += offset
             }
           },
           leave(_node) {
-            if (annotations.length) {
+            if (offset) {
               const node = withLocations(_node)
-              node.end += sumOffset(annotations)
+              node.end += offset
             }
           },
         })
 
-        if (annotations.length) {
+        if (offset) {
           return {
             code: s.toString(),
             ast: withLocations(ast),
@@ -90,8 +90,4 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
       },
     },
   }
-}
-
-function sumOffset(annotations: string[]) {
-  return annotations.reduce((acc, annotation) => acc + annotation.length, 0)
 }
