@@ -2,7 +2,7 @@
   "name": "rollup-plugin-pure",
   "type": "module",
   "version": "0.3.0",
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.8.1",
   "description": "Annotate functions as pure for Rollup",
   "author": {
     "name": "Daniel Roe <daniel@roe.dev>",
