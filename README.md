@@ -7,7 +7,6 @@
 
 > Automatically add `/* #__PURE__ */` annotations before definition functions
 
-- [✨ &nbsp;Changelog](https://github.com/danielroe/rollup-plugin-pure/blob/main/CHANGELOG.md)
 - [▶️ &nbsp;Online playground](https://stackblitz.com/github/danielroe/rollup-plugin-pure/tree/main/playground)
 
 ## Features
