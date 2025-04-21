@@ -39,6 +39,7 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
         }
 
         const s = new MagicString(code)
+        let offset = 0
 
         walk(ast, {
           enter(_node) {
@@ -50,13 +51,9 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
               && node.id
               && isMatched(node.id.name, options.functions)
             ) {
-              for (const _comment of ast.comments || []) {
-                const comment = withLocations(_comment)
-                if (comment.end <= node.start && comment.value.includes('__NO_SIDE_EFFECTS__')) {
-                  return
-                }
-              }
-              s.prependRight(node.start, '/*@__NO_SIDE_EFFECTS__*/ ')
+              const annotation = '/*@__NO_SIDE_EFFECTS__*/ '
+              s.prependRight(node.start, annotation)
+              offset += annotation.length
             }
 
             // Handle function calls - add @__PURE__ annotation
@@ -65,20 +62,27 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
               && node.callee.type === 'Identifier'
               && isMatched(node.callee.name, options.functions)
             ) {
-              for (const _comment of ast.comments || /* v8-ignore */ []) {
-                const comment = withLocations(_comment)
-                if (comment.end <= node.start && comment.value.includes('__PURE__')) {
-                  return
-                }
-              }
-              s.prependRight(node.start, '/*@__PURE__*/ ')
+              const annotation = '/*@__PURE__*/ '
+              s.prependRight(node.start, annotation)
+              offset += annotation.length
+            }
+
+            if (offset) {
+              node.start += offset
+            }
+          },
+          leave(_node) {
+            if (offset) {
+              const node = withLocations(_node)
+              node.end += offset
             }
           },
         })
 
-        if (s.hasChanged()) {
+        if (offset) {
           return {
             code: s.toString(),
+            ast: withLocations(ast),
             map: options.sourcemap ? /* v8-ignore */ s.generateMap({ hires: true }) : undefined,
           }
         }
