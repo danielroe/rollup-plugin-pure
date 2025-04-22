@@ -50,6 +50,8 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
               node.type === 'FunctionDeclaration'
               && node.id
               && isMatched(node.id.name, options.functions)
+              // @ts-expect-error untyped
+              && !node._rollupAnnotations?.some(i => i.type === 'noSideEffects')
             ) {
               const annotation = '/*@__NO_SIDE_EFFECTS__*/ '
               s.prependRight(node.start, annotation)
@@ -61,6 +63,8 @@ export function PluginPure(options: PureAnnotationsOptions): Plugin {
               node.type === 'CallExpression'
               && node.callee.type === 'Identifier'
               && isMatched(node.callee.name, options.functions)
+              // @ts-expect-error untyped
+              && !node._rollupAnnotations?.some(i => i.type === 'pure')
             ) {
               const annotation = '/*@__PURE__*/ '
               s.prependRight(node.start, annotation)
