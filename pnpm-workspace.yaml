@@ -1,2 +1,9 @@
 packages:
   - playground
+
+ignoredBuiltDependencies:
+  - esbuild
+  - unrs-resolver
+
+onlyBuiltDependencies:
+  - simple-git-hooks
