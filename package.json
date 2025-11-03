@@ -2,7 +2,7 @@
   "name": "rollup-plugin-pure",
   "type": "module",
   "version": "0.4.0",
-  "packageManager": "pnpm@10.19.0",
+  "packageManager": "pnpm@10.20.0",
   "description": "Annotate functions as pure for Rollup",
   "author": {
     "name": "Daniel Roe <daniel@roe.dev>",
@@ -45,10 +45,10 @@
     "unplugin-utils": "^0.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "6.1.0",
+    "@antfu/eslint-config": "6.2.0",
     "@codspeed/vitest-plugin": "5.0.1",
     "@types/estree": "1.0.8",
-    "@types/node": "22.18.12",
+    "@types/node": "22.19.0",
     "@vitest/coverage-v8": "3.2.4",
     "bumpp": "10.3.1",
     "eslint": "9.38.0",
