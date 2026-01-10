@@ -51,7 +51,7 @@
     "@types/node": "24.10.0",
     "@vitest/coverage-v8": "3.2.4",
     "bumpp": "10.3.1",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "execa": "9.6.0",
     "lint-staged": "16.2.6",
     "magic-regexp": "0.10.0",
