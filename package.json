@@ -45,7 +45,7 @@
     "unplugin-utils": "^0.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "6.2.0",
+    "@antfu/eslint-config": "7.4.3",
     "@codspeed/vitest-plugin": "5.2.0",
     "@types/estree": "1.0.8",
     "@types/node": "24.10.0",
