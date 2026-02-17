@@ -53,8 +53,8 @@
     "bumpp": "10.3.1",
     "eslint": "9.39.2",
     "execa": "9.6.0",
-    "lint-staged": "16.2.6",
     "magic-regexp": "0.10.0",
+    "nano-staged": "^0.9.0",
     "pathe": "2.0.3",
     "rollup": "4.53.2",
     "simple-git-hooks": "2.13.1",
@@ -68,9 +68,9 @@
     "rollup-plugin-pure": "link:."
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
+    "pre-commit": "npx nano-staged"
   },
-  "lint-staged": {
+  "nano-staged": {
     "*": [
       "npx eslint --fix"
     ]
