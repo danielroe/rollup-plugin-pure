@@ -49,7 +49,7 @@ importers:
         specifier: 0.10.0
         version: 0.10.0
       nano-staged:
-        specifier: ^0.9.0
+        specifier: 0.9.0
         version: 0.9.0
       pathe:
         specifier: 2.0.3
