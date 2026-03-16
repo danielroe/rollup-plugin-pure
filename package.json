@@ -50,7 +50,7 @@
     "@types/estree": "1.0.8",
     "@types/node": "24.10.0",
     "@vitest/coverage-v8": "4.1.0",
-    "bumpp": "10.3.1",
+    "bumpp": "11.0.1",
     "eslint": "9.39.4",
     "execa": "9.6.0",
     "magic-regexp": "0.10.0",
