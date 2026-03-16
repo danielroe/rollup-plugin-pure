@@ -58,7 +58,7 @@
     "pathe": "2.0.3",
     "rollup": "4.53.2",
     "simple-git-hooks": "2.13.1",
-    "std-env": "3.10.0",
+    "std-env": "4.0.0",
     "typescript": "5.9.3",
     "unbuild": "3.6.1",
     "vite": "7.3.1",
