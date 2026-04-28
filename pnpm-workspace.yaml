@@ -7,3 +7,6 @@ ignoredBuiltDependencies:
 
 onlyBuiltDependencies:
   - simple-git-hooks
+
+overrides:
+  rollup-plugin-pure: "link:."

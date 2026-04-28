@@ -64,9 +64,6 @@
     "vite": "8.0.7",
     "vitest": "4.1.2"
   },
-  "resolutions": {
-    "rollup-plugin-pure": "link:."
-  },
   "simple-git-hooks": {
     "pre-commit": "npx nano-staged"
   },
