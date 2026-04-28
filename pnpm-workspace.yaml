@@ -1,12 +1,11 @@
 packages:
   - playground
 
+overrides:
+  rollup-plugin-pure: 'link:.'
 ignoredBuiltDependencies:
   - esbuild
   - unrs-resolver
 
 onlyBuiltDependencies:
   - simple-git-hooks
-
-overrides:
-  rollup-plugin-pure: "link:."
