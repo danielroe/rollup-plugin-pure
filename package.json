@@ -16,19 +16,27 @@
     "pure-annotation"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.cjs"
+      },
+      "./package.json": "./package.json"
+    }
+  },
   "scripts": {
-    "build": "unbuild",
-    "dev:prepare": "simple-git-hooks && unbuild --stub",
+    "build": "tsdown",
+    "dev:prepare": "simple-git-hooks",
     "lint": "pnpm eslint .",
     "prepack": "pnpm build",
     "prepublishOnly": "pnpm lint && pnpm test",
@@ -59,8 +67,8 @@
     "rollup": "4.53.2",
     "simple-git-hooks": "2.13.1",
     "std-env": "4.0.0",
+    "tsdown": "0.22.0",
     "typescript": "6.0.3",
-    "unbuild": "3.6.1",
     "vite": "8.0.16",
     "vitest": "4.1.8"
   },
