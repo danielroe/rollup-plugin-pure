@@ -59,7 +59,7 @@
     "@types/node": "24.10.0",
     "@vitest/coverage-v8": "4.1.8",
     "bumpp": "11.0.1",
-    "eslint": "9.39.4",
+    "eslint": "10.5.0",
     "execa": "9.6.0",
     "magic-regexp": "0.10.0",
     "nano-staged": "1.0.2",
