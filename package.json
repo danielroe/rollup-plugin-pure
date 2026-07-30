@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "estree-walker": "^3.0.3",
-    "magic-string": "^0.30.17",
+    "magic-string": "^1.0.0",
     "unplugin-utils": "^0.3.0"
   },
   "devDependencies": {
