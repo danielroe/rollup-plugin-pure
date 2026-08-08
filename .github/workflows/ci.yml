@@ -59,7 +59,7 @@ jobs:
         run: pnpm build
 
       - name: 🏁 Benchmark project
-        uses: CodSpeedHQ/action@76578c2a7ddd928664caa737f0e962e3085d4e7c # v3.8.1
+        uses: CodSpeedHQ/action@4296e51e7041e24dadb86d1d6e8b9320d223dbe8 # v5.0.3
         with:
           run: pnpm vitest bench
           token: ${{ secrets.CODSPEED_TOKEN }}
