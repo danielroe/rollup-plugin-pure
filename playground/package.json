@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "rollup-plugin-pure": "latest",
-    "vite": "8.1.5"
+    "vite": "8.2.2"
   }
 }
