@@ -2,7 +2,7 @@ packages:
   - playground
 
 overrides:
-  rollup-plugin-pure: 'link:.'
+  rollup-plugin-pure: 'workspace:*'
 
 allowBuilds:
   esbuild: false
